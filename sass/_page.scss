@@ -1,0 +1,221 @@
+.main
+{
+    padding-bottom: 4em;
+
+    @include responsive(desktop)
+    {
+        padding: 0;
+    }
+
+
+    &__img
+    {
+
+        @include responsive(desktop)
+        {
+            position: absolute;
+            top: 0; right: 0;
+        }
+    }
+
+    &__hero
+    {
+        width: 100%;
+        object-fit: cover;
+
+        @include responsive(desktop)
+        {
+            display: none;
+        }
+
+        &--desktop
+        {
+            display: none;
+
+            @include responsive(desktop)
+            {
+                display: block;
+                width: 100%;
+                height: 100vh;
+                object-fit: cover;
+            }
+        }
+    }
+
+    &__container
+    {
+        padding: 0 2em;
+        transform: translateY(-2em);
+        text-align: center;
+
+        @include responsive(desktop)
+        {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            flex-direction: column;
+            position: absolute;
+            top: 12em; left: 8em;
+            max-width: 30%;
+        }
+    }
+
+    &__title
+    {
+        text-transform: uppercase;
+        font-size: 40px;
+        font-weight: map-get($font-weights, light);
+        color: $desaturated-red;
+        letter-spacing: 10px;
+        line-height: 1.1;
+
+        @include responsive(desktop)
+        {
+            text-align: start;
+            font-size: 55px;
+            transform: translateY(-.4em);
+            letter-spacing: 12px;
+        }
+
+        &--dark
+        {
+            font-weight: map-get($font-weights, semi-bold);
+            color: $dark-grayish-red;
+        }
+    }
+
+    &__text
+    {
+        color: $desaturated-red;
+        transform: translateY(-1em);
+        font-size: 15px;
+        line-height: 1.5;
+
+        @include responsive(desktop)
+        {
+            text-align: start;
+            transform: translateY(-4em);
+            line-height: 1.7;
+        }
+    }
+
+    &__form
+    {
+        position: relative;
+
+        &--email
+        {
+            border-radius: 30px;
+            border: 1px solid rgba($color: $desaturated-red, $alpha: .6); outline: none;
+            background-image: linear-gradient($linear-primary);
+            width: 100%;
+            height: 3em;
+            box-sizing: border-box;
+            color: $dark-grayish-red;
+            font-weight: map-get($font-weights, semi-bold);
+            padding-left: 25px;
+
+            @include responsive (desktop)
+            {
+                position: fixed;
+                top: 20.5em; left: 2em;
+                width: 85%;
+            }
+
+            &::placeholder
+            {
+                color: rgba($color: $desaturated-red, $alpha: .5);
+                font-size: 13px;
+            }
+        }
+
+        &--btn
+        {
+            position: absolute;
+            right: 0em; top: 0em;
+            width: 62px;
+            height: 48px;
+            border-radius: 30px;
+            border: none; outline: none;
+            background-image: linear-gradient($linear-secondary);
+            box-shadow: 0px 10px 10px rgba($color:  $desaturated-red, $alpha: .3);
+            cursor: pointer;
+
+            @include responsive(desktop)
+            {
+                position: fixed;
+                top: 20.5em; right: 1.45em;
+                width: 80px;
+                height: 48px;
+
+                &:hover
+                {
+                    background: $soft-pink;
+                }
+            }
+        }
+
+        &--icon
+        {
+            transform: translate(.1em, .2em);
+            width: 11px;
+        }
+    }
+
+    /*Style Js start*/
+
+    .error
+    {
+        display: none;
+    }
+
+    .message
+    {
+        font-size: 12px;
+        color: rgba($color: $soft-red, $alpha: .8);
+        text-align: left;
+        padding-left: 4.5em;
+        transform: translateY(-3.5em);
+
+        @include responsive(desktop)
+        {
+            position: fixed;
+            bottom: 6.5em; left: 15em;
+            padding-left: 0;
+            transform: translateY(0);
+        }
+
+    }
+
+    .icon
+    {
+        width: 20px;
+        float: right;
+        transform: translate(-6.6em, -5.4em);
+
+        @include responsive(desktop)
+        {
+            
+            transform: translateY(0);
+            position: absolute;
+            bottom: 20.5%; left: 34%;
+        }
+    }
+
+    .showMessage
+    {
+        display: block;
+    }
+
+    .bordeRed
+    {
+
+        border: 2px solid rgba($color: $soft-red, $alpha: .8);
+
+    }
+
+    /*Style Js end*/
+
+}
+
+
